@@ -42,7 +42,7 @@ const LoginScreen = () => {
     };
 
     axios
-      .post("http://10.0.2.2:8000/login", user)
+      .post("https://kartikvibe.onrender.com/login", user)
       .then((response) => {
         // console.log(response);
         const token = response.data.token;

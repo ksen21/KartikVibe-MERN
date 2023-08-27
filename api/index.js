@@ -20,13 +20,17 @@ const port = process.env.PORT || 8000;
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(passport.initialize());
+const url = process.env.MONGODB_URL;
+console.log(url, "this the eroorrs sd>>>>>>>>>>");
 
-
-mongoose.connect("mongodb+srv://kartik:kartik%40123@cluster0.urutz6v.mongodb.net/", {
+mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {
